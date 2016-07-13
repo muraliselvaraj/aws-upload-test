@@ -10,18 +10,13 @@ module.exports = {
 	uploadTest: function(req, res){
 		var opts = req.body;
 
-		var uploadData = {
-			data: opts.data,
-			folder: 'iamrole-test',
-			ext: 'png',
-			name: opts.name
-		};
+		var uploadData = {};
 
 		if(opts && opts.data){
 			uploadData.data = opts.data;
 			uploadData.folder = 'iamrole-test';
 			uploadData.ext = 'png';
-			uploadData.name = Math.floor(Date.now());
+			uploadData.name = Math.floor(Date.now())+'.'+uploadData.ext;
 			startUpload();
 		} else {
 			var FolderPath = process.env['HOME']+'/upload-test';
