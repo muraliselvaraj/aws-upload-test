@@ -33,7 +33,7 @@ module.exports = {
 	            	uploadData.path = fileName;
 					uploadData.folder = 'iamrole-test';
 					uploadData.ext = 'json';
-					uploadData.name = Math.floor(Date.now());
+					uploadData.name = fileName.split('/')[fileName.length - 1];
 	                startUpload();
 	            }
 	        });
