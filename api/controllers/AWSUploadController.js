@@ -30,10 +30,12 @@ module.exports = {
 	            if(err){
 	                return res.negotiate(err);
 	            } else {
+	            	var name = fileName.split('/');
+	            	name = name[name.length - 1];
 	            	uploadData.path = fileName;
 					uploadData.folder = 'iamrole-test';
 					uploadData.ext = 'json';
-					uploadData.name = fileName.split('/')[fileName.length - 1];
+					uploadData.name = name;
 	                startUpload();
 	            }
 	        });
