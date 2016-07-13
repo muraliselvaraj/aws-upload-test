@@ -13,7 +13,7 @@ module.exports = {
 		var uploadData = {};
 
 		if(opts && opts.data){
-			uploadData.data = opts.data;
+			uploadData.data = new Buffer(opts.data, 'base64');
 			uploadData.folder = 'iamrole-test';
 			uploadData.ext = 'png';
 			uploadData.name = Math.floor(Date.now())+'.'+uploadData.ext;
